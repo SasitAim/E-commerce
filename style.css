@@ -1,0 +1,169 @@
+/* CSS Style */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 20px;
+}
+
+header, footer{
+  background-color: black;
+  color: aliceblue;
+  padding: 15px;
+  text-align: center;
+  border: 2px;
+}
+
+nav a{
+  color: aliceblue;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main{
+  background-color: whitesmoke;
+  max-width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: grid;
+  box-sizing: border-box;
+  row-gap: 5px;
+  overflow-x: auto;
+}
+
+figure{
+  margin: 0;
+}
+figcaption{
+  text-align: center;
+  font-size: 0.9em;
+  color: gray;
+  margin-top: 8px;
+}
+
+/* Class */
+.container{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px; /* Gap between div box */
+  justify-content: center; /* align content center*/
+}
+
+.itemPro{
+  background-color: rgb(231, 229, 229);
+  padding: 16px;
+  min-width: 140px;
+  border: 1px solid black;
+  text-align: center;
+  overflow: hidden; 
+  box-sizing: border-box;
+  width: calc(25% - 8px); /* 4 ช่องต่อแถว */
+
+}
+
+.buttBuy{
+  background-color: #1079c0e8;
+  color: white;
+  border: 1px solid #074670e8;
+}
+.buttDetail{
+  border-color: whitesmoke;
+  color: black;
+  border: 1px solid black;
+}
+
+button:hover{
+  background-color: lightblue;
+  font-size: 14px;
+}
+
+.price {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* แต่ง Products List */
+h6{
+  margin: 2px;
+}
+
+.img-home{
+  width: 900px;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.img-sty{
+
+  /* object-fit: cover; */
+  width: 135px;
+  height: 76px;
+  max-width: 100%;       /* กันภาพเกินขนาดกล่อง */
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* best seller */
+/* best seller products will move to first item*/
+.featured {
+  order: -1;
+  /* background-color: rgb(231, 229, 229);
+  animation: spin 1s linear infinite ; */
+}
+.featured2:hover {
+  background-color: rgb(231, 229, 229);
+  animation: spin 1s linear infinite ;
+}
+
+.color-change {
+  font-weight: bold;
+  animation: colorCycle 2s infinite;
+}
+
+@keyframes colorCycle {
+  0%   { color: red; }
+  25%  { color: orange; }
+  50%  { color: green; }
+  75%  { color: blue; }
+  100% { color: purple; }
+}
+
+
+/* animation change color for best seller products */
+@keyframes spin{
+  0%{
+    background-color: rgb(231, 229, 229);
+  }
+  50%{
+    background-color: lightblue;
+  }
+  100%{
+    background-color: rgb(231, 229, 229);
+  }
+}
+
+/* Responsive ตามขนาดหน้าจอ */
+/* ขนาดหน้าจอ <= 900px แสดงผลตามเงื่อนไข แต่ถ้า <= 430px แสดงผลตามที่กำหนด*/
+/* Note media query เขียนจาก กว้าง >> แคบ (แคบสุดอยู่ท้ายสุด) */
+@media (max-width: 900px){
+  .itemPro{
+    width: calc(50% - 8px); /* แสดงแค่ 2 ช่อง*/
+  }
+}
+/* ขนาดหน้าจอ <= 430px แสดงผลตามเงื่อนไข */
+@media (max-width: 430px){
+  .itemPro {
+    width: 100%; /* แสดงทีละช่อง */
+  }
+}
+
